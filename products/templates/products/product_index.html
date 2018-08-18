@@ -4,7 +4,7 @@
 <h1>Product List</h1>
 <ul>
 {% for product in products %}
-    <li>{{ product.name }}</li>
+    <li>{{ product.name }} - <a href="{{ product.get_absolute_url }}">Detail</a></li>
 {% empty %}
     <li>There is no products to list.</li>
 {% endfor %}

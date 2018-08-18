@@ -8,7 +8,7 @@ def product_detail_view(request, id):
     product = get_object_or_404(Product, id=id)
 
     context = {"product": product}
-    return render(request, 'products/detail.html', context)
+    return render(request, 'products/product_detail.html', context)
 
 
 def product_create_view(request):
