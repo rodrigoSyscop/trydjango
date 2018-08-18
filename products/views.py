@@ -28,3 +28,8 @@ def product_delete_view(request, id):
 
     context = {"product": product}
     return render(request, "products/product_delete.html", context)
+
+
+def product_index_view(request):
+    products = Product.objects.all()
+    return render(request, "products/product_index.html", {"products": products})
