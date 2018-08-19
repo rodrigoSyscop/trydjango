@@ -20,6 +20,16 @@ def product_create_view(request):
     return render(request, "products/product_create.html", context)
 
 
+def product_update_view(request, id):
+    product = get_object_or_404(Product, id=id)
+    form = ProductForm(request.POST or None, instance=product)
+    if form.is_valid():
+        form.save()
+    print(form.errors)
+    context = {"form": form}
+    return render(request, "products/product_create.html", context)
+
+
 def product_delete_view(request, id):
     product = get_object_or_404(Product, id=id)
     if request.method == "POST":
